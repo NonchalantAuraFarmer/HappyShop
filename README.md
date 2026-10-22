@@ -1,5 +1,4 @@
 # HappyShop
-# hello practicing here shalom
 A JavaFX project developed in IntelliJ using Maven (JDK 25, JavaFX 25), designed for CI553 coursework.
 
 ## ➡️ Setup
