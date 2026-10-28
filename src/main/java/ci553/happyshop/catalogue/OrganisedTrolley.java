@@ -1,5 +1,7 @@
 package ci553.happyshop.catalogue;
 
+import java.util.Collections;
+
 public class OrganisedTrolley extends Trolley {
     @Override
     public void addProduct(Product product) {
@@ -14,5 +16,6 @@ public class OrganisedTrolley extends Trolley {
                 product.getProductImageName(), product.getUnitPrice(), product.getOrderedQuantity(),
                 product.getStockQuantity()); /* Solved bug #1 */
         super.addProduct(copy); /* product -> copy */
+        Collections.sort(getProducts());
     }
 }
