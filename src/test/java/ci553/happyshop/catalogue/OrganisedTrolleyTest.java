@@ -10,7 +10,7 @@ class OrganisedTrolleyTest {
     void addSameProductThrice_mergeToOneLine() {
         // create object
         Trolley trolley = new OrganisedTrolley();
-        Product toast = new Product("0001", "toast", "0003.jpg", 15.19, 100);
+        Product toast = new Product("0001", "toast", "0001.jpg", 15.19, 100);
 
         // add object thrice
         trolley.addProduct(toast);
@@ -19,6 +19,6 @@ class OrganisedTrolleyTest {
 
         // getProducts returns a list, size() should be 1, 3 products = 1 object, 3 quantity
         assertEquals(1, trolley.getProducts().size());
-        assertEquals(3, trolley.getProducts().getFirst().getOrderedQuantity());
+        assertEquals(3, trolley.getProducts().get(0).getOrderedQuantity());
     }
 }
