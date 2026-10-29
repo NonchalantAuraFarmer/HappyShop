@@ -1,6 +1,7 @@
 package ci553.happyshop.catalogue;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Trolley {
 
@@ -69,4 +70,27 @@ public class Trolley {
     public void clear() {
         products.clear();
     }
+
+    public void removeProduct(String productId) {
+        Iterator<Product> iterator = products.iterator();
+        while (iterator.hasNext()) {
+            Product p = iterator.next();
+            if (p.getProductId().equals(productId)) {
+                iterator.remove();
+            }
+        }
+    }
+
+    public void changeQuantity(String productId, int amount) {
+        for (Product p : products) {
+            if (p.getProductId().equals(productId)) {
+                int newQuantity = p.getOrderedQuantity() + amount;
+                if (newQuantity >= 1) {
+                    p.setOrderedQuantity(newQuantity);
+                }
+                return;
+            }
+        }
+    }
 }
+
